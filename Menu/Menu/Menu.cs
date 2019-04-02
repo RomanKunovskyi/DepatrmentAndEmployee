@@ -3,7 +3,7 @@ using System;
 
 namespace Menu
 {
-    public class Menu
+    public class ProgramMenu
     {
         void print()
         {
@@ -24,7 +24,7 @@ namespace Menu
             Console.WriteLine("Enter 11 to exit ");
 
         }
-        public Menu()
+        public ProgramMenu()
         {
             int choice = 0;
             while (choice != 11)
