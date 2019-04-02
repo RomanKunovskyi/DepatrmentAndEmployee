@@ -131,7 +131,7 @@ namespace DepatrmentAndEmployeeLibrary
                 info += "Id: " + employee.Id + "\n";
                 info += "Name: " + employee.Name + "\n";
                 info += "Surname: " + employee.Surname + "\n";
-                //info += "DepartmentName: " + GetNameDepartment(employee.DepartmentId) + "\n";
+                info += "DepartmentName: " + GetNameDepartment(employee.DepartmentId) + "\n";
                 info += "DepartmentId: " + employee.DepartmentId + "\n";
                 info += "Email: " + employee.Email + "\n";
                 info += "PhoneNumber: " + employee.PhoneNumber + "\n";
@@ -291,7 +291,227 @@ namespace DepatrmentAndEmployeeLibrary
             return false;
         }
 
-       
+        public bool AddDepartment(string name, string email, string address, long phone_number)
+        {
+            Reader();
+            long id;
+            if (DepartmentInfoList.Count == 0)
+            {
+                id = 100000000;
+            }
+            else
+            {
+                id = DepartmentInfoList[DepartmentInfoList.Count - 1].Id + 1;
+            }
+            try
+            {
+                DateTime date_of_creation_department = DateTime.Today;
+                DepartmentInfoList.Add(new DepartmentInfo
+                {
+                    Id = id,
+                    Name = name,
+                    Email = email,
+                    Address = address,
+                    PhoneNumber = phone_number,
+                    DateOfCreationDepartment = date_of_creation_department
+                });
+                Writer();
+                return true;
+            }
+            catch
+            {
+                Writer();
+                return false;
+            }
+        }
+        public bool DeleteDepartment(long id)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Id == id)
+                {
+                    DeleteByDepartmentIdEmployee(department.Id);
+                    DepartmentInfoList.Remove(department);
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+        }
+        public bool DeleteDepartment(string name)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Name == name)
+                {
+                    DeleteByDepartmentIdEmployee(department.Id);
+                    DepartmentInfoList.Remove(department);
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+
+        }
+        public bool ClearDepartment()
+        {
+            Writer();
+            return true;
+        }
+        public string GetInfoDepartment()
+        {
+            Reader();
+            string info = "DepartmentInfoList\n\n";
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                info += "Id: " + department.Id + "\n";
+                info += "Name: " + department.Name + "\n";
+                info += "Email: " + department.Email + "\n";
+                info += "Address: " + department.Address + "\n";
+                info += "PhoneNumber: " + department.PhoneNumber + "\n";
+                info += "DateOfCreationDepartment: " + department.DateOfCreationDepartment + "\n";
+                info += "\n";
+            }
+            Writer();
+            return info;
+        }
+        public string GetNameDepartment(long id)
+        {
+
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Id == id)
+                {
+                    return department.Name;
+                }
+            }
+
+            return "";
+        }
+        public bool ChangeNameDepartment(long id, string name)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Id == id)
+                {
+                    department.Name = name;
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+        }
+        public bool ChangeEmailDepartment(long id, string email)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Id == id)
+                {
+                    department.Email = email;
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+        }
+        public bool ChangeAddressDepartment(long id, string address)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Id == id)
+                {
+                    department.Address = address;
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+        }
+        public bool ChangePhoneNumberDepartment(long id, long phone_number)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Id == id)
+                {
+                    department.PhoneNumber = phone_number;
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+        }
+        public bool ChangeNameDepartment(string name, string new_name)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Name == name)
+                {
+                    department.Name = new_name;
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+        }
+        public bool ChangeEmailDepartment(string name, string email)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Name == name)
+                {
+                    department.Email = email;
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+        }
+        public bool ChangeAddressDepartment(string name, string address)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Name == name)
+                {
+                    department.Address = address;
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+        }
+        public bool ChangePhoneNumberDepartment(string name, long phone_number)
+        {
+            Reader();
+            foreach (DepartmentInfo department in DepartmentInfoList)
+            {
+                if (department.Name == name)
+                {
+                    department.PhoneNumber = phone_number;
+                    Writer();
+                    return true;
+                }
+            }
+            Writer();
+            return false;
+        }
 
         public void Writer()
         {
