@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DepatrmentAndEmployeeLibrary;
+using System;
 
 namespace Menu
 {
@@ -66,7 +63,7 @@ namespace Menu
                 if (choice == 1)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
                     string name = "";
                     while (name == "")
@@ -180,7 +177,7 @@ namespace Menu
                 else if (choice == 2)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
                     string name = "";
                     while (name == "")
@@ -233,7 +230,7 @@ namespace Menu
                 else if (choice == 3)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
 
 
@@ -319,7 +316,7 @@ namespace Menu
                 else if (choice == 4)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
                     int choice_delete = 0;
                     res = true;
@@ -398,7 +395,7 @@ namespace Menu
                 else if (choice == 5)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
                     if (DAE.ClearEmployee() == true)
                     {
@@ -413,7 +410,7 @@ namespace Menu
                 else if (choice == 6)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
                     Console.WriteLine("ALL EMPLOYEE WILL DELETE TOO!!!!!");
                     if (DAE.ClearDepartment() == true)
@@ -431,7 +428,7 @@ namespace Menu
                 else if (choice == 7)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
 
                     int choice_change = 0;
@@ -1013,7 +1010,7 @@ namespace Menu
                 else if (choice == 8)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
                     int choice_change = 0;
                     res = true;
@@ -1442,7 +1439,7 @@ namespace Menu
                 else if (choice == 9)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
                     Console.WriteLine(DAE.GetInfoEmployee());
                     Console.ReadLine();
@@ -1450,7 +1447,7 @@ namespace Menu
                 else if (choice == 10)
                 {
                     Console.Clear();
-                    DepartmentAndEmployee DAE = new DepartmentAndEmployee();
+                    DepatrmentAndEmployee DAE = new DepatrmentAndEmployee();
 
                     Console.WriteLine(DAE.GetInfoDepartment());
                     Console.ReadLine();
